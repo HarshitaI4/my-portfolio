@@ -24,7 +24,7 @@ const HeroSection = () => {
             </h1>
 
             <h2 className="text-xl md:text-2xl text-muted-foreground mb-6">
-              Junior ServiceNow Developer | Full Stack Developer
+              SerViceNow Certified | Full Stack Developer
             </h2>
 
             <p className="text-muted-foreground max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed">
