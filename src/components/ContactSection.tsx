@@ -18,7 +18,7 @@ const contactInfo = [
   {
     icon: MapPin,
     label: 'Location',
-    value: 'Eluru, Andhra Pradesh, India',
+    value: 'Gudivada, Andhra Pradesh, India',
     href: '#',
   },
 ];
@@ -59,22 +59,21 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="py-24 relative">
-      {/* Background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px]" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16 animate-slide-up">
+        <div className="text-center mb-16">
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
             Get In <span className="text-gradient">Touch</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Feel free to reach out for collaborations, opportunities, or just a friendly chat!
+            Feel free to reach out for opportunities or collaboration
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          {/* Contact Info */}
-          <div className="animate-slide-in-left">
+
+          <div>
             <h3 className="font-display text-2xl font-semibold mb-6">Contact Information</h3>
             
             <div className="space-y-4 mb-8">
@@ -82,9 +81,9 @@ const ContactSection = () => {
                 <a
                   key={index}
                   href={item.href}
-                  className="glass-hover p-4 rounded-2xl flex items-center gap-4 group"
+                  className="glass-hover p-4 rounded-2xl flex items-center gap-4"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
                     <item.icon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
@@ -95,7 +94,6 @@ const ContactSection = () => {
               ))}
             </div>
 
-            {/* Social Links */}
             <h4 className="font-semibold mb-4">Connect with me</h4>
             <div className="flex gap-4">
               {socialLinks.map((link, index) => (
@@ -104,8 +102,7 @@ const ContactSection = () => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="glass-hover p-4 rounded-xl hover:glow-primary transition-all"
-                  aria-label={link.label}
+                  className="glass-hover p-4 rounded-xl"
                 >
                   <link.icon className="w-6 h-6" />
                 </a>
@@ -113,63 +110,44 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="animate-slide-in-right">
+          <div>
             <form onSubmit={handleSubmit} className="glass p-8 rounded-2xl">
               <h3 className="font-display text-2xl font-semibold mb-6">Send a Message</h3>
               
               <div className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-muted/50 border border-border rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
-                    placeholder="John Doe"
-                  />
-                </div>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-muted/50 border border-border rounded-xl px-4 py-3"
+                  placeholder="Enter your name"
+                />
 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    Your Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-muted/50 border border-border rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
-                    placeholder="john@example.com"
-                  />
-                </div>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-muted/50 border border-border rounded-xl px-4 py-3"
+                  placeholder="Enter your email"
+                />
 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={4}
-                    className="w-full bg-muted/50 border border-border rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none"
-                    placeholder="Your message..."
-                  />
-                </div>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={4}
+                  className="w-full bg-muted/50 border border-border rounded-xl px-4 py-3"
+                  placeholder="Type your message"
+                />
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-primary py-3 rounded-xl font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity glow-primary"
+                  className="w-full bg-gradient-primary py-3 rounded-xl font-semibold flex items-center justify-center gap-2"
                 >
                   <Send size={18} />
                   Send Message
@@ -177,6 +155,7 @@ const ContactSection = () => {
               </div>
             </form>
           </div>
+
         </div>
       </div>
     </section>
