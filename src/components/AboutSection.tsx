@@ -5,7 +5,7 @@ const education = [
     degree: 'B.Tech in ECE',
     status: 'Pursuing',
     institution: 'Ramachandra College of Engineering, Eluru',
-    score: 'CGPA: 7.74',
+    score: 'CGPA: 7.75',
   },
   {
     degree: 'Intermediate (MPC)',
